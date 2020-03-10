@@ -1,0 +1,309 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Josefin Slab', serif;
+    color: black;
+    background: #abbaab;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #ffffff, #abbaab);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #ffffff, #abbaab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, 
+    Opera 12+, Safari 7+ */
+}
+
+a:link, a:visited, a:active {      
+    text-decoration:none;
+    color: #cc0e74;
+    font-size: 20px;
+}
+
+.boton {                  
+    position: fixed;
+    bottom: 10px;
+    right: 2%; 
+    z-index: 3;}
+
+.iconos {
+    position: fixed;
+    bottom: 10px;
+    right: 10%;
+    z-index: 3; 
+}
+
+.tec{
+    border:3px solid black;
+    width:150px;/* el ancho de la img */
+    height: 150px;
+    }
+
+.nav {
+    text-align: right;
+    font-family: 'Josefin Slab', serif;
+    height: 50px;
+    line-height: 50px;
+    font-weight: 800;
+    position: sticky;
+    top: 0;
+    background: #C33764;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1D2671, #C33764);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1D2671, #C33764); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, 
+    Opera 12+, Safari 7+ */       
+    z-index: 3;
+}
+
+.menu ul {
+    margin: 0 50px 0 30px;
+}
+
+.menu li {
+    display: inline-block;
+    list-style: none;
+    text-decoration: none;
+    color: whitesmoke;
+    margin: 0px;
+    line-height: 30px;
+    padding: 6px;
+}
+  
+.menu li:hover {
+    background-color: #222;
+    color: #333;
+}
+
+li div {
+    display: none;
+    transition: 0.5s;
+    text-align: center;
+}
+
+li:hover>div {
+   
+    clear: both;
+    padding: 0 10px;
+    display: inline-block;
+    padding-left: 3px;
+    font-size: 10px;
+    transition: 0.5s;
+    text-align: center;
+} 
+
+label {
+    margin: 0 4px 0 0;
+    font-size: 26px;
+    line-height: 50px;
+    display: none;
+    width: 24px;
+    float: right;
+}
+
+#toggle {
+    display: none;
+}
+
+
+@media only screen and (max-width: 520px) {    
+    .page {
+        border-radius: 0;
+    }
+
+    li:hover div {
+        position: relative;
+        clear: both;
+        padding: 0 10px;
+        display: block;
+        padding-left: 3px;
+        font-size: 10px;
+        transition: 0.5s;
+    }
+    label {
+        display: block;
+        cursor: pointer;
+        transition: ease;
+    }
+    .menu {
+        text-align: center;
+        width: 100%;
+        display: none;
+        transition: ease;
+        top: 0;
+        z-index: 5;
+    }
+    label {
+        display: flex;
+        color: black;
+        padding: 0 15px 0 15px;
+    }
+    .menu li {
+        display: block;
+        border-bottom: 2px solid rgb(221, 34, 159);
+        margin: 0;
+        background-color: rgba(15, 22, 114, 0.5);
+        color: black;
+        font-size: 14px;
+        line-height: 1.5;
+        padding: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .menu li:hover {
+        display: block;
+        border-bottom: 1px solid rgb(177, 15, 142);
+        margin: 0;
+        background-color: rgba(15, 1, 8, 0.8);
+        font-size: 14px;
+        line-height: 1.5;
+        padding: 12px;
+        font-weight: 600;
+        transition: all .3s;
+    }
+
+    #toggle:checked+.menu {
+        display: block;
+    }
+
+}
+
+/*Portada*/
+.container-portada{
+    width: 100%;
+    height: 450px;
+    position: relative;
+    background-image: url(image/code4.jpg);
+    background-size: 200%;
+    animation: movimiento 20s infinite linear alternate;  
+}
+
+@keyframes movimiento{
+    from{
+        background-position: bottom left;
+    }to{
+        background-position: top right;
+    }
+}
+
+.capa-gradient{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: -webkit-linear-gradient(to left#1D2671, #C33764);  /* Chrome 10-25, Safari 5.1-6 */
+    opacity: 0.5;
+}
+
+.container-details{
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+    margin: auto;
+}
+
+.details{
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    top: 20px;
+    color: white;
+}
+
+.details h1{
+    font-size: 50px;
+    font-weight: 100;
+    margin-left: 10px;
+}
+
+.details p{
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 100;
+    margin-left: 10px;
+}
+
+.details button{
+    padding: 10px 20px;
+    font-size: 16px;
+    background: none;
+    border-style: none;
+    border: 1px solid white;
+    margin-top: 20px;
+    transition: background 300ms;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.details button:hover{
+    background:black;
+}
+
+/*Articulo*/
+main{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    text-align: justify;
+}
+
+article{
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+    padding-right: 20px;
+}
+
+article hr{
+    max-width: 500px;
+    height: 4px;
+    border-style: none;
+    background: #C33764;  /* - Esta es la línea antes de los párrafos -  fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1D2671, #C33764);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1D2671, #C33764); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, 
+    Opera 12+, Safari 7+ */
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+article p{
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: 100;
+    margin-left: 10px;
+}
+
+article form { /*ver*/
+    text-align: left;
+    color: #222;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 33.33%;
+    padding: 5px;
+}
+
+
+@media screen and (max-width: 500px){
+    .details p{
+        font-size: 18px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
